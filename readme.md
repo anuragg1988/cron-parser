@@ -1,0 +1,35 @@
+**Cron Parser - Command Line Java Client**
+
+- Description :-
+    - This is Cron expression parser, written in Java (used [maven](https://maven.apache.org/) to manage compile/build and dependency management) and currently supporting 5 params cron expression with below supported expression:-
+        - Can support normal number expression like "5 6 8 1 6"
+        - Can support range expression using hyphen like "3-4 6 8 1 0-4"
+        - Can support comma separated expression like "1,5 6 8 1 6"
+        - Can support slash separated expression like "1/5 6 8 1 6"
+        - Can support multiple combinations of any above expression like "1/5 6-10 8,10 1 6"
+        - Can support user additional command  like "1/5 6 8 1 6 usr/bin"
+- Test cases:-
+    - Unit tests are written in Junit+Mockito framework and can be found in src.test.java.com.company . And they can be run using "mvn test''
+    - Integration tests are written in Junit framework as well and can be found in src.test.java.integration.com.company . And they can be run using "mvn test'
+- How to only Run locally:-
+    - Install [java](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html) in your machine (preferably jdb 1.8)
+    - Download the CronParser-1.0.0.jar file locally
+    - Execute the jar file with your input command of cron expression like
+        - java -jar target/CronParser-1.0.0.jar "5 6 8 1 6"
+        - It will show the output on the console
+- How to Debug/Update locally:-
+    - Install [java](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html) in your machine (preferably jdb 1.8)
+    - Open project path in terminal
+    - Build and compile the project using "mvn clean install" . Note that this would also run local test classes
+    - It will create the executable jar in path target/CronParser-1.0.0.jar
+    - Execute the jar file with your input command of cron expression like
+        - java -jar target/CronParser-1.0.0.jar "5 6 8 1 6"
+        - It will show the output on the console
+- TODO In below priority order:-
+  - Have logs/metric implemented (logback.xml) - Accordingly set Grafana/Prometheus metric+alert
+  - Support multiple cron jobs commands in one execution 
+  - Implement different type of output apart from Console like com.company.output.FileOutPutWriter
+  - Implement HttpAPIClient as well
+  - Support multi threading to handle fast processing(Fork join)
+  - Support handling negative numbers in cron expression
+  - Support for 6 params cron expression
