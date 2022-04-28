@@ -31,5 +31,6 @@
   - Implement different type of output apart from Console like com.company.output.FileOutPutWriter
   - Implement HttpAPIClient as well
   - Support multi threading to handle fast processing(Fork join)
+  - Support cache for individual parser result
   - Support handling negative numbers in cron expression
   - Support for 6 params cron expression
